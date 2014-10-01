@@ -1,0 +1,32 @@
+{
+  "name": "metadungeon",
+  "version": "0.1.0",
+  "homepage": "https://github.com/SirAnthony/metadungeon",
+  "authors": [
+    "Sir Anthony <anthony@adsorbtion.org>"
+  ],
+  "description": "Procedural dungeon-design generating library",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "dungeon",
+    "procgen",
+    "procedural"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "~2.1.15"
+  },
+  "dependencies": {
+    "underscore": "~1.7.0",
+    "rand31": "~1.0.2"
+  }
+}

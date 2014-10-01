@@ -1,0 +1,17 @@
+<html>
+    <head>
+    </head>
+    <style>
+    input{float: right; max-width: 35px;}
+    #seed {max-width: 120px;}
+    input[type="button"] {max-width: 100px;}</style>
+    <body>
+        <input type="button" id="generate" value="Generate">
+        <input type="text" id="seed">
+        <input type="text" id="spaces" value="25">
+        <input type="text" id="keys" value="4">
+        <input type="text" id="switches" value="1">
+        <canvas id="view" width="1024" height="768"></canvas>
+        <script data-main="./viewer.js" src="../bower_components/requirejs/require.js"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "metadungeon",
+  "version": "0.0.1",
+  "description": "Procedural dungeon-design generating library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "dungeon",
+    "procgen",
+    "procedural"
+  ],
+  "author": "SirAnthony"
+}

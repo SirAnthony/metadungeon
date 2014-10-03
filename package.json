@@ -1,6 +1,6 @@
 {
   "name": "metadungeon",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Procedural dungeon-design generating library.",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,21 @@
     "procgen",
     "procedural"
   ],
-  "author": "SirAnthony"
+  "author": "SirAnthony",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-contrib-jshint": "^0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SirAnthony/metadungeon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SirAnthony/metadungeon/issues"
+  },
+  "homepage": "https://github.com/SirAnthony/metadungeon"
 }

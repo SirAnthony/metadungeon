@@ -2,10 +2,8 @@
 define(['underscore'], function(_){
 
 function hsvToHex(r, g, b){
-
-    r *= 255, g *= 255, b *= 255;
-    return "#" + ((1 << 24) + (r << 16) +
-        (g << 8) + b).toString(16).slice(1);
+    return "#" + ((1 << 24) + (r*255 << 16) +
+        (g*255 << 8) + b*255).toString(16).slice(1);
 }
 
 function point(c, size, mod){
@@ -37,24 +35,24 @@ function drawEdge(ctx, size, mod, room){
             ctx.fillStyle = "#000";
             if (cond.level){
                 ctx.beginPath();
-                var x = mid.x + (edge.vertical ? 0 : -8);
-                var y = mid.y + (edge.vertical ? 10 : -2);
-                ctx.fillText(toChar(cond.level), x, y);
+                var lx = mid.x + (edge.vertical ? 0 : -8);
+                var ly = mid.y + (edge.vertical ? 10 : -2);
+                ctx.fillText(toChar(cond.level), lx, ly);
             }
             if (cond.switch){
-                var x = mid.x + (edge.vertical ? -20 : -18);
-                var y = mid.y + (edge.vertical ? -20 : -25);
-                ctx.fillText(cond.switch < 0 ? 'OFF' : 'ON', x, y);
+                var sx = mid.x + (edge.vertical ? -20 : -18);
+                var sy = mid.y + (edge.vertical ? -20 : -25);
+                ctx.fillText(cond.switch < 0 ? 'OFF' : 'ON', sx, sy);
             }
         }
     });
-};
+}
 
 function drawRoom(ctx, size, mod, room){
     var o = {
         x: room.coords.x * size * mod,
         y: room.coords.y * size * mod,
-    }
+    };
     var c = {
         x: room.coords.x * size + size/2,
         y: room.coords.y * size + size/2,
@@ -78,7 +76,7 @@ function drawRoom(ctx, size, mod, room){
     if (room.item)
         ctx.fillText(toChar(room.item), c.x+o.x - 6, c.y+o.y - 4);
     ctx.fillText(room.intensity.toFixed(2), c.x+o.x-18, c.y+o.y+14);
-};
+}
 
 var Painter = function(context, data){
     var rooms = data.rooms;
@@ -98,5 +96,5 @@ var Painter = function(context, data){
 };
 
 return Painter;
-})
+});
 

@@ -3,8 +3,8 @@ require.config({
     baseUrl: '..',
     paths: {
         'gen': 'lib',
-        'rand31': 'bower_components/rand31/rand31',
-        'underscore': 'bower_components/underscore/underscore'},
+        'rand31': 'build/rand31/rand31',
+        'underscore': 'build/underscore/underscore'},
     //urlArgs: 'bust=' + (new Date()).getTime()
 });
 

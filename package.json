@@ -16,9 +16,6 @@
     "procedural"
   ],
   "author": "SirAnthony",
-  "dependencies": {
-    "grunt": "^0.4.5"
-  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-bower-task": "^0.4.0",

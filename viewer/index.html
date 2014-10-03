@@ -2,15 +2,20 @@
     <head>
     </head>
     <style>
-    input{float: right; max-width: 35px;}
+    .float{float: right;}
+    label{display: block;}
+    input{max-width: 35px;}
     #seed {max-width: 120px;}
     input[type="button"] {max-width: 100px;}</style>
     <body>
-        <input type="button" id="generate" value="Generate">
-        <input type="text" id="seed">
-        <input type="text" id="spaces" value="25">
-        <input type="text" id="keys" value="4">
-        <input type="text" id="switches" value="1">
+        <div class="float">
+            <input type="button" id="generate" value="Generate">
+            <input type="button" id="random" value="Random">
+            <label for="seed">Seed: <input type="text" id="seed"></label>
+            <label for="spaces"><input type="text" id="spaces" value="25">spaces</label>
+            <label for="keys"><input type="text" id="keys" value="4">keys</label>
+            <label for="switches"><input type="text" id="switches" value="1">switches</label>
+        </div>
         <canvas id="view" width="1024" height="768"></canvas>
         <script data-main="./viewer.js" src="../bower_components/requirejs/require.js"></script>
     </body>

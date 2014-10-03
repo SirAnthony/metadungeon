@@ -9,7 +9,7 @@ require.config({
 });
 
 require(['gen/generator', './viewer/painter'],
-function(Generator, Painter){
+function(Generator,painter){
 
 var view = document.getElementById('view');
 
@@ -23,16 +23,23 @@ function generate(seed){
     var g = new Generator(seed, {spaces: val('spaces'),
         keys: val('keys'), switches: val('switches')});
     return g.generate();
-};
-
-function redraw(){
 }
 
-var btn = document.querySelector('#generate');
-btn.addEventListener('click', function(){
-    var data = generate();
+function redraw(seed){
+    var data = generate(seed);
     view.width = view.width;
-    Painter(view.getContext('2d'), data);
-});
+    painter(view.getContext('2d'), data);
+}
+
+function redraw_seed(){
+    var sin = document.querySelector('#seed');
+    redraw(sin.value);
+}
+
+var gbtn = document.querySelector('#generate');
+gbtn.addEventListener('click', redraw_seed);
+var rbtn = document.querySelector('#random');
+rbtn.addEventListener('click', function(){ redraw(); });
+redraw();
 
 });

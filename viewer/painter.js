@@ -30,17 +30,22 @@ function drawEdge(ctx, size, mod, room){
         ctx.moveTo(r.x,r.y);
         ctx.lineTo(e.x,e.y);
         ctx.stroke();
-        if (edge.condition && edge.condition.level){
-            ctx.beginPath();
+        var cond = edge.condition;
+        if (cond){
             var mid = {x: (r.x+e.x)/2, y: (r.y+e.y)/2};
-            if (edge.vertical)
-                mid.y += 10;
-            else
-                mid.y -= 2, mid.x -= 8;
             ctx.font="1em Georgia";
             ctx.fillStyle = "#000";
-            ctx.fillText(toChar(edge.condition.level),
-                mid.x, mid.y);
+            if (cond.level){
+                ctx.beginPath();
+                var x = mid.x + (edge.vertical ? 0 : -8);
+                var y = mid.y + (edge.vertical ? 10 : -2);
+                ctx.fillText(toChar(cond.level), x, y);
+            }
+            if (cond.switch){
+                var x = mid.x + (edge.vertical ? -20 : -18);
+                var y = mid.y + (edge.vertical ? -20 : -25);
+                ctx.fillText(cond.switch < 0 ? 'OFF' : 'ON', x, y);
+            }
         }
     });
 };
@@ -61,6 +66,8 @@ function drawRoom(ctx, size, mod, room){
     ctx.lineWidth = 1;
     ctx.strokeStyle = "#000";
     ctx.stroke();
+    ctx.font="1em Georgia";
+    ctx.fillStyle = "#000";
     if (room.goal){
         ctx.beginPath();
         ctx.arc(c.x + o.x, c.y + o.y, size/3, 0, 2 * Math.PI);
